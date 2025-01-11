@@ -582,10 +582,6 @@ footer ul {
     flex-direction: row;
   }
 
-  .section-heading {
-    text-align: center;
-  }
-
   .vision ul {
     grid-template-columns: var(--grid-cols-3);
   }
