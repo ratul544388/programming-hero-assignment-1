@@ -80,7 +80,6 @@ table {
   border-collapse: collapse;
 }
 
-/* Add a border to table cells */
 th, td {
   border: 1px solid var(--border);
   padding: 2.5rem 1.5rem;
@@ -147,7 +146,7 @@ header .container {
 .hero .left p {
   font-size: var(--font-size-xl);
   font-weight: 500;
-  color: var(--black-3);
+  text-align: start;
 }
 
 .hero h1 {
@@ -249,13 +248,13 @@ header .container {
 }
 
 .pillars ul li p {
-  margin-top: 12px;
-  color: var(--black-3);
+  margin-top: 0.75rem;
+  text-align: start;
 }
 
 .vision .description {
+  text-align: start;
   margin-top: 1.5rem;
-  color: var(--black-3);
 }
 
 .vision ul {
@@ -278,7 +277,7 @@ header .container {
 
 .vision ul li p {
   margin-top: 0.75rem;
-  color: var(--black-3);
+  text-align: start;
 }
 
 .vision ul li button {
@@ -327,6 +326,7 @@ header .container {
 
 .vision .quote p {
   color: var(--black-2);
+  text-align: start;
 }
 
 .vision .quote h3 {
@@ -369,6 +369,10 @@ header .container {
   gap: 2rem
 }
 
+.news .section-description {
+  text-align: start;
+}
+
 .news li {
   background-color: var(--white-1);
   padding: 3rem;
@@ -402,11 +406,19 @@ header .container {
   margin-top: 1.5rem;
 }
 
+.newsletter {
+  padding-inline: 5rem;
+  border-radius: 1.5rem;
+  background-color: var(--green-3);
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 /* RESPONSIVE WITH MEDIA QUERY */
 
-.donate {
+.donate form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -418,6 +430,7 @@ header .container {
 
 .donate p {
   margin-top: 1rem;
+  color: var(--black-3);
 }
 
 .donate ul {
@@ -450,6 +463,38 @@ header .container {
 .donate input::placeholder {
   font-weight: 500;
   font-size: var(--font-size-md);
+}
+
+.newsletter {
+  padding: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter h1 {
+  font-size: var(--font-size-3xl);
+}
+
+.newsletter p {
+  margin-top: 1rem;
+}
+
+.newsletter form {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+}
+
+.newsletter input {
+  width: 100%;
+  padding-inline: 2rem;
+}
+
+.newsletter button {
+  border-radius: 0;
 }
 
 @media only screen and (min-width: 600px) {
