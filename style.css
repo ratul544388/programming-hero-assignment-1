@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Fira Sans";
+  box-sizing: border-box;
 }
 
 /* CSS VARIABLES  */
@@ -93,16 +94,13 @@ tr:hover {
 }
 
 tbody td:first-child {
-  width: 100%; /* Let the first column take maximum available space */
+  width: 100%;
 }
 
-/* Prevent the second column from expanding */
 tbody td:nth-child(2) {
-  white-space: nowrap; /* Prevent text wrapping */
-  width: 1%; /* Ensure the column stays narrow */
+  width: 1%;
 }
 
-/* Center the table heading */
 caption {
   font-size: 20px;
   font-weight: bold;
@@ -164,7 +162,7 @@ header .container {
 
 .hero img {
   width: 325px;
-  
+
 }
 
 
@@ -219,6 +217,7 @@ header .container {
   max-width: 1250px;
   margin-inline: auto;
   padding-inline: 1rem;
+  position: relative;
 }
 
 .section-heading {
@@ -351,7 +350,6 @@ header .container {
   background-color: var(--green-3);
   font-size: var(--font-size-md);
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .opinions td {
@@ -391,9 +389,11 @@ header .container {
 
 .news li .date {
   margin-top: 1rem;
+  text-align: start;
 }
 
 .news li .description {
+  text-align: start;
   margin-top: 1rem;
   color: var(--black-3);
 }
@@ -403,6 +403,54 @@ header .container {
 }
 
 
+
+/* RESPONSIVE WITH MEDIA QUERY */
+
+.donate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donate h1, p {
+  text-align: center;
+}
+
+.donate p {
+  margin-top: 1rem;
+}
+
+.donate ul {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.donate ul li {
+  background-color: var(--white-1);
+  padding: 2.5rem;
+  font-size: var(--font-size-3xl);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1.5rem;
+  border: 1.5px solid var(--border);
+}
+
+.donate input {
+  margin-top: 2rem;
+  height: 4rem;
+  width: 100%;
+  border: 1.5px solid var(--border);
+  padding-inline: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: var(--font-size-md);
+}
+
+.donate input::placeholder {
+  font-weight: 500;
+  font-size: var(--font-size-md);
+}
 
 @media only screen and (min-width: 600px) {
   .pillars .cards {
@@ -429,6 +477,10 @@ header .container {
   .opinions .card {
     padding: 2rem;
     border-radius: 1.5rem;
+  }
+
+  .donate ul {
+    grid-template-columns: var(--grid-cols-2);
   }
 }
 
@@ -466,5 +518,9 @@ header .container {
 
   .news ul li:nth-child(even) {
     flex-direction: row-reverse;
+  }
+
+  .donate ul {
+    grid-template-columns: var(--grid-cols-4);
   }
 }
