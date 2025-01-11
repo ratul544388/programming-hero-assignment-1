@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans";
+}
+
+/* CSS VARIABLES  */
+:root {
+  --black-1: #0e0e0e;
+  --black-2: rgba(14, 14, 14, 80%);
+  --black-3: rgba(14, 14, 14, 70%);
+  --black-4: rgba(14, 14, 14, 60%);
+  --border: rgba(14, 14, 14, 20%);
+  --accent: #ddd;
+  --white-1: #ffffff;
+  --white-2: #f5f5f5;
+  --white-3: #f1f1f3;
+  --blue-1: #5490f5;
+  --blue-2: rgba(84, 144, 245, 20%);
+  --green-1: #006a50;
+  --green-2: #09a15c;
+  --green-3: #c6e4d6;
+  --yellow-1: #ffc239;
+  --yellow-2: #f7ebcf;
+  --font-size-4xl: 3.5rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-lg: 1.25rem;
+  --font-size-md: 1.125rem;
+  --transition: all 0.25s ease-in-out;
+}
+
+/* DEFAULT COLORS */
+body {
+  color: var(--black-1);
+  background-color: var(--white-3);
+}
+
+/* DEFAULT HTML ELEMENTS */
+header {
+  height: 100px;
+  background-color: var(--white-2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+main {
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-1);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+  transition: var(--transition);
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Add a border to table cells */
+th, td {
+  border: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: left;
+}
+
+/* Highlight row on hover */
+tr:hover {
+  background-color: var(--accent);
+  translate: var(--transition);
+}
+
+tbody td:first-child {
+  width: 100%; /* Let the first column take maximum available space */
+}
+
+/* Prevent the second column from expanding */
+tbody td:nth-child(2) {
+  white-space: nowrap; /* Prevent text wrapping */
+  width: 1%; /* Ensure the column stays narrow */
+}
+
+/* Center the table heading */
+caption {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer {
+  height: 226px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-1);
+}
+
+/* HEADER STYLE  */
+header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+}
+
+/* HERO  */
+.hero {
+  padding: 5rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  background-color: var(--green-3);
+  border-radius: 1.5rem;
+}
+
+.hero.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .left p {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--black-3);
+}
+
+.hero h1 {
+  margin-top: 1rem;
+  font-size: var(--font-size-4xl);
+  font-weight: bold;
+}
+
+.hero button {
+  margin-top: 1.5rem;
+}
+
+/* BUTTONS  */
+.btn {
+  height: 3.25rem;
+  padding-inline: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn.green {
+  border: none;
+  background-color: var(--green-1);
+  color: white;
+}
+
+.btn.outline {
+  border: 2px solid var(--green-1);
+  color: var(--green-1);
+}
+
+.btn.outline:hover {
+  background-color: var(--green-3);
+  transition: var(--transition);
+}
+
+/* OTHERS  */
+
+.text-secondary {
+  color: var(--black-3);
+}
+
+.margin-top-1 {
+  margin-top: 1rem;
+}
+
+.margin-top-2 {
+  margin-top: 1.5rem;
+}
+
+.margin-top-3 {
+  margin-top: 2rem;
+}
+
+.container {
+  max-width: 1250px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.section-heading {
+  font-size: var(--font-size-3xl);
+  font-weight: bold;
+}
+
+.section-margin-top {
+  margin-top: 5rem;
+}
+
+.pillars .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pillars .cards .card {
+  background-color: var(--white-1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.pillars .cards .card h4 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+.pillars .cards .card p {
+  margin-top: 12px;
+  color: var(--black-3);
+  max-width: 230px;
+}
+
+.vision .description {
+  margin-top: 1.5rem;
+  color: var(--black-3);
+}
+
+.vision ul {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vision ul li {
+  background-color: var(--white-1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.vision ul li h4 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+.vision ul li p {
+  margin-top: 0.75rem;
+  color: var(--black-3);
+}
+
+.vision ul li button {
+  margin-top: 1.5rem;
+}
+
+.vision ul li:first-child {
+  background-color: var(--blue-2);
+}
+
+.vision ul li:first-child button {
+  background-color: var(--blue-1);
+  color: white;
+}
+
+.vision ul li:nth-child(2) button {
+  background-color: var(--green-2);
+  color: white;
+}
+
+.vision ul li:nth-child(2) {
+  background-color: var(--green-3);
+}
+
+.vision ul li:last-child {
+  background-color: var(--yellow-2);
+}
+
+.vision ul li:last-child button {
+  background-color: var(--yellow-1);
+  color: white;
+}
+
+.vision .quote {
+  background-color: white;
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+}
+
+.vision .quote .quote-image {
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.vision .quote p {
+  color: var(--black-2);
+}
+
+.vision .quote h3 {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  margin-top: 1.5rem;
+}
+
+.vision .quote span {
+  display: block;
+  color: var(--black-4);
+  margin-top: 0.25rem;
+}
+
+.opinions .card {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: var(--white-1);
+  border-radius: 1.5rem;
+}
+
+.opinions th {
+  background-color: var(--green-3);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.opinions td {
+  font-weight: 600;
+}
+
+.opinions td button {
+  border: 2px solid var(--border);
+  font-size: 1rem;
+  gap: 0.5rem;
+  background-color: var(--green-3);
+}
+
+.news ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem
+}
+
+.news li {
+  background-color: var(--white-1);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1.5rem;
+}
+
+.news li:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.news li h2 {
+  font-weight: bold;
+  font-size: var(--font-size-2xl);
+}
+
+.news li .img {
+  border-radius: 1.5rem;
+}
+
+.news li .date {
+  margin-top: 1rem;
+}
+
+.news li .description {
+  margin-top: 1rem;
+  color: var(--black-3);
+}
+
+.news li button {
+  margin-top: 1.5rem;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+}
