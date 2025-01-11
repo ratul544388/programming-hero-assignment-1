@@ -447,6 +447,13 @@ header .container {
   text-align: center;
   border-radius: 1.5rem;
   border: 1.5px solid var(--border);
+  cursor: pointer;
+}
+
+.donate ul li:hover {
+  background-color: var(--green-3);
+  transition: var(--transition);
+  border: 1.5px solid var(--green-2);
 }
 
 .donate input {
