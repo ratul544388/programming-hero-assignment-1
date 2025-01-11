@@ -30,6 +30,9 @@
   --font-size-xl: 1.5rem;
   --font-size-lg: 1.25rem;
   --font-size-md: 1.125rem;
+  --grid-cols-4: repeat(4, minmax(0, 1fr));
+  --grid-cols-3: repeat(3, minmax(0, 1fr));
+  --grid-cols-2: repeat(2, minmax(0, 1fr));
   --transition: all 0.25s ease-in-out;
 }
 
@@ -123,7 +126,7 @@ header .container {
 }
 
 .logo {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: bold;
 }
 
@@ -131,6 +134,7 @@ header .container {
 .hero {
   padding: 5rem;
   display: flex;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
   background-color: var(--green-3);
@@ -158,10 +162,16 @@ header .container {
   margin-top: 1.5rem;
 }
 
+.hero img {
+  width: 325px;
+  
+}
+
+
 /* BUTTONS  */
 .btn {
-  height: 3.25rem;
-  padding-inline: 1.875rem;
+  height: 2.5rem;
+  padding-inline: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,30 +230,28 @@ header .container {
   margin-top: 5rem;
 }
 
-.pillars .cards {
-  display: flex;
-  flex-wrap: wrap;
+.pillars ul {
+  display: grid;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.pillars .cards .card {
+.pillars ul li {
   background-color: var(--white-1);
   border-radius: 1rem;
   padding: 1.5rem;
 }
 
-.pillars .cards .card h4 {
+.pillars ul li h4 {
   margin-top: 1.5rem;
   font-weight: bold;
   font-size: var(--font-size-lg);
 }
 
-.pillars .cards .card p {
+.pillars ul li p {
   margin-top: 12px;
   color: var(--black-3);
-  max-width: 230px;
 }
 
 .vision .description {
@@ -252,7 +260,7 @@ header .container {
 }
 
 .vision ul {
-  display: flex;
+  display: grid;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -336,9 +344,7 @@ header .container {
 
 .opinions .card {
   margin-top: 2rem;
-  padding: 2rem;
   background-color: var(--white-1);
-  border-radius: 1.5rem;
 }
 
 .opinions th {
@@ -369,13 +375,9 @@ header .container {
   background-color: var(--white-1);
   padding: 3rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 2rem;
   border-radius: 1.5rem;
-}
-
-.news li:nth-child(even) {
-  flex-direction: row-reverse;
 }
 
 .news li h2 {
@@ -402,12 +404,67 @@ header .container {
 
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 600px) {
+  .pillars .cards {
+    grid-template-columns: var(--grid-cols-2);
+  }
+
+  .vision ul {
+    grid-template-columns: var(--grid-cols-2);
+  }
+
+  .vision ul li:last-child {
+    grid-column: span 2;
+  }
+
+  .logo {
+    font-size: var(--font-size-2xl);
+  }
+
+  .btn {
+    height: 3.25rem;
+    padding-inline: 1.875rem;
+  }
+
+  .opinions .card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+}
+
+
+@media only screen and (min-width: 800px) {
+
+}
+
+
+@media only screen and (min-width: 1000px) {
   .hero {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .section-heading {
     text-align: center;
+  }
+
+  .vision ul {
+    grid-template-columns: var(--grid-cols-3);
+  }
+
+  .vision ul li:last-child {
+    grid-column: span 1;
+  }
+
+  .pillars .cards {
+    grid-template-columns: var(--grid-cols-4);
+  }
+
+  .news ul li {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .news ul li:nth-child(even) {
+    flex-direction: row-reverse;
   }
 }
